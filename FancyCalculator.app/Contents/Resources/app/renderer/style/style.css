@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #eee;
+}
+
+body {
+    font-family: Mina, 'Century Gothic', 'Arial Narrow', 'Helvetica'
+}
+
+section {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+#screen {
+    height: 30%;
+    width: 100%;
+    background: #8caeb3;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#output {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: black;
+    font-size: 19px;
+    /* padding: 0 8px; */
+}
+
+/* 输入框 */
+
+#input {
+    width: 100%;
+    /* border-top: 1px solid black; */
+    background-color: #ddd;
+    font-weight: 600;
+}
+
+/* 每一个sentence */
+
+#screen>div>div {
+    padding: 0 8px;
+    width: 100%;
+    text-align: right;
+}
+
+#keyboard {
+    height: 70%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#basic,
+#advanced {
+    display: flex;
+    position: absolute;
+    background: black;
+    text-align: center;
+    flex-wrap: wrap;
+    /* bottom: 0; */
+    /* 若想相对于父元素绝对定位, 父元素必须也有定位 */
+    height: 100%;
+}
+
+#advanced {
+    /* 选择第三种解决方案: 无缝切入切出 */
+    /* display: none; */
+    /* opacity: 0; */
+    /* transition: opacity .9s; */
+    width: 50%;
+    transition: left .9s;
+    left: -50%;
+    font-size: 18px;
+    z-index: 1;
+}
+
+#basic {
+    z-index: 2;
+    right: 0;
+    width: 100%;
+    transition: width .9s;
+    font-size: 20px;
+}
+
+#basic div {
+    background-color: black;
+    width: 25%;
+    height: 20%;
+    color: white;
+    /* 行高等于元素height实现文本垂直居中 */
+    line-height: 70px;
+}
+
+#advanced div {
+    background-color: black;
+    width: 25%;
+    height: 20%;
+    color: white;
+    line-height: 70px;
+}
+
+#keyboard>div>div:hover {
+    /* 反色 */
+    filter: invert(100%);
+    /* Chrome, Safari, Opera */
+    --webkit-filter: invert(100%);
+}
+
+/* 每个按键 */
+
+#keyboard>div>div {
+    transition: border-radius .1s;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+/* 鼠标按下时 */
+
+#keyboard>div>div:active {
+    border-radius: 50%;
+}
+
+sub,
+sup {
+    /* 否则会挤压底数(╬￣皿￣)=○ */
+    line-height: 18px;
+    font-size: 13px;
+}
+
+.big {
+    font-size: 25px;
+}
+
+#cursor {
+    float: left;
+    padding: 0 8px;
+    font-size: 19px;
+}

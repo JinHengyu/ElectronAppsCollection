@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>关于计算器</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            text-align: center;
+        }
+
+        body {
+            font-family: '微软雅黑';
+            background: #E5F3F7;
+        }
+
+        .wrapper {
+            width: 100%;
+            height: auto;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .wrapper p {
+            margin: 0;
+            line-height: 30px;
+        }
+
+        .author,
+        .code {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <p>品名：
+            <span>Fancy Calculator</span>
+        </p>
+        <p>版本：
+            <span class="version"></span>
+        </p>
+        <p>作者：
+            <span class="author" onclick="shell.openExternal('http://www.openidea.xin')">恒星(jinhengyu666@gmail.com)</span>
+        </p>
+        <p>源码：
+            <a class="code" target="_blank" href="https://github.com/JinHengyu/FancyCalculator">JinHengyu/FancyCalculator</a>
+        </p>
+    </div>
+
+    <script>
+        const {
+            shell,
+            remote
+        } = require('electron');
+
+        const main = {
+            init() {
+                main.getAppVersion();
+            },
+            getAppVersion() {
+                document.querySelector('.version').innerHTML = remote.getGlobal('version');
+            }
+        }
+        main.init();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Fancy Calc ( Basic Mode )</title>
+	<link rel="stylesheet" href="./style/font.css">
+	<link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+	<section>
+
+		<div id="screen">
+			<div id="output"></div>
+			<div id="input">
+				<span id="cursor">&gt;</span>
+				<div></div>
+			</div>
+		</div>
+
+
+		<div id="keyboard">
+
+
+
+			<div id="advanced">
+
+				<div onClick="fn(`int`,`Math.round`)">rond</div>
+				<div onClick="fn(`floor`,`Math.floor`)">flor</div>
+				<div onClick="fn(`ceil`,`Math.ceil`)">ceil</div>
+				<div onClick="wrap();append(`**`, `**`)">x
+					<sup>n</sup>
+				</div>
+
+				<div onClick="fn(`sin`,`Math.sin`)">sin</div>
+				<div onClick="fn(`cos`,`Math.cos`)">cos</div>
+				<div onClick="fn(`tan`,`Math.tan`)">tan</div>
+				<div onClick="append(`π`,Math.PI)">π</div>
+
+				<div onClick="append(`&amp;`)">&amp;</div>
+				<div onClick="append(`|`)">|</div>
+				<div onClick="append(`~`)">～</div>
+				<div onClick="append(`e`,Math.E)">e</div>
+
+				<div onClick="append(`&lt;&lt;`)">&lt;&lt;</div>
+				<div onClick="append(`&gt;&gt;`)">&gt;&gt;</div>
+				<div onClick="append(`^`)" class="big">⊕</div>
+				<div onClick="append(`Ran`,`Math.random()`)">r</div>
+
+				<div onClick="calculate(2)">2=</div>
+				<div onClick="calculate(8)">8=</div>
+				<div onClick="calculate(16)">16=</div>
+				<div onClick="wrap(undefined)">[ ]</div>
+
+
+				<!-- <div class="keyboard-item" onClick="main.clickSpecial('17')">x!</div> -->
+			</div>
+
+
+			<div id="basic">
+
+				<div onClick="append(`%`)">%</div>
+				<div onClick="append(`(`)">(</div>
+				<div onClick="append(`)`)">)</div>
+				<div onClick="del()" id="key_del">←</div>
+
+				<div onClick="append(`/`)">/</div>
+				<div onClick="append(`7`)" id="key_7">7</div>
+				<div onClick="append(`8`)" id="key_8">8</div>
+				<div onClick="append(`9`)" id="key_9">9</div>
+
+				<div onClick="append(`*`)">＊</div>
+				<div onClick="append(`4`)" id="key_4">4</div>
+				<div onClick="append(`5`)" id="key_5">5</div>
+				<div onClick="append(`6`)" id="key_6">6</div>
+
+				<div onClick="append(`-`)">-</div>
+				<div onClick="append(`1`)" id="key_1">1</div>
+				<div onClick="append(`2`)" id="key_2">2</div>
+				<div onClick="append(`3`)" id="key_3">3</div>
+
+				<div onClick="append(`+`)">+</div>
+				<div onClick="append(`.`)" class="big">·</div>
+				<div onClick="append(`0`)" id="key_0">0</div>
+				<div onClick="calculate()" id="key_eq">=</div>
+
+			</div>
+
+
+
+
+			<!-- html中尖括号的优先级大于引号? -->
+
+
+		</div>
+
+
+
+	</section>
+
+
+	<!-- 再次注意, html外链的js文件之间从逻辑上都是一个文件 -->
+	<script src="./script/main.js"></script>
+	<script src="./script/key.js"></script>
+</body>
+
+</html>
